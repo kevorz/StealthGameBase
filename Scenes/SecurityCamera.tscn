@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/SecurityCamera.cs" type="Script" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+
+[node name="SecurityCamera" type="Spatial"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Model" type="Spatial" parent="."]
+transform = Transform( -1, -8.74228e-08, 7.64274e-15, -8.74228e-08, 1, -8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 1.27051 )
+
+[node name="CSGBox" type="CSGBox" parent="Model"]
+width = 1.0
+height = 1.0
+
+[node name="CSGBox6" type="CSGBox" parent="Model"]
+transform = Transform( 1, 0, 0, 0, 0.886583, 0.462569, 0, -0.462569, 0.886583, 0, 0, -1.18027 )
+width = 0.0902737
+height = 0.0885511
+depth = 0.45527
+
+[node name="CSGBox3" type="CSGBox" parent="Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.450228, 1.18906 )
+width = 1.0
+height = 0.0613885
+depth = 0.398884
+
+[node name="CSGBox4" type="CSGBox" parent="Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.455328, 0.110123, 1.04893 )
+width = 0.062688
+height = 0.62349
+depth = 0.123338
+
+[node name="CSGBox5" type="CSGBox" parent="Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.458766, 0.110123, 1.04893 )
+width = 0.062688
+height = 0.62349
+depth = 0.123338
+
+[node name="CSGBox2" type="CSGBox" parent="Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00810075, 1.10372 )
+width = 0.406058
+height = 0.376879
+depth = 0.307521
+material = SubResource( 2 )
+
+[node name="LightOn" type="CSGBox" parent="Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.271292, -0.39466, 0.992445 )
+width = 0.135799
+height = 0.149786
+depth = 0.0905766
+material = SubResource( 3 )
+
+[node name="LightOff" type="CSGBox" parent="Model"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.271292, -0.39466, 0.992445 )
+visible = false
+width = 0.135799
+height = 0.149786
+depth = 0.0905766
+material = SubResource( 4 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 600, 400 )
+hdr = false
+keep_3d_linear = true
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="Viewport"]
+keep_aspect = 0
+current = true

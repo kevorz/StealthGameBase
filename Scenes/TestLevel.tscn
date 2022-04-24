@@ -1,0 +1,151 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/PressurePlate.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Window.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/SecurityCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/SecurityMonitor.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Guard.tscn" type="PackedScene" id=6]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_color = Color( 0.345098, 0.345098, 0.345098, 1 )
+metallic = 1.0
+
+[sub_resource type="Curve3D" id=2]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 6.21061, 0, -35.3651, 0, 0, 0, 0, 0, 0, 18.8082, 0, -35.3651, 0, 0, 0, 0, 0, 0, 18.9547, 0, -10.2431, 0, 0, 0, 0, 0, 0, 13.9743, 0, -10.2431, 0, 0, 0, 0, 0, 0, 13.6813, 0, 2.57424, 0, 0, 0, 0, 0, 0, 4.74577, 0, 2.13478, 0, 0, 0, 0, 0, 0, 13.3883, 0, 4.03907, 0, 0, 0, 0, 0, 0, 12.6559, 0, -10.3163, 0, 0, 0, 0, 0, 0, 6.35709, 0, -10.5361, 0, 0, 0, 0, 0, 0, 5.99088, 0, -21.1561, 0, 0, 0, 0, 0, 0, -15.3225, 0, -20.7899, 0, 0, 0, 0, 0, 0, 7.52897, 0, -21.3026, 0, 0, 0, 0, 0, 0, 6.21061, 0, -35.3651 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
+[node name="TestLevel" type="Spatial"]
+
+[node name="Environment" type="Spatial" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 0.664135, 0.747613, 0, -0.747613, 0.664135, 0.562034, 32.5182, 18.3598 )
+
+[node name="Floor" type="CSGBox" parent="Environment"]
+use_collision = true
+width = 50.0
+depth = 86.0
+material = SubResource( 1 )
+
+[node name="Wall1" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 5, 0 )
+use_collision = true
+height = 8.0
+depth = 86.0
+
+[node name="Wall2" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -11 )
+use_collision = true
+height = 8.0
+depth = 12.0
+
+[node name="Wall14" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -33 )
+use_collision = true
+height = 8.0
+depth = 16.0
+
+[node name="Wall3" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 3 )
+use_collision = true
+height = 8.0
+depth = 12.0
+
+[node name="Wall4" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 5, 0 )
+use_collision = true
+height = 8.0
+depth = 86.0
+
+[node name="Wall5" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 42 )
+use_collision = true
+width = 46.0
+height = 8.0
+
+[node name="Wall6" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -42 )
+use_collision = true
+width = 46.0
+height = 8.0
+
+[node name="Wall7" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -4 )
+use_collision = true
+width = 24.0
+height = 8.0
+
+[node name="Wall10" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 5, 8 )
+use_collision = true
+width = 4.0
+height = 8.0
+
+[node name="Wall11" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 5, 8 )
+use_collision = true
+width = 4.0
+height = 8.0
+
+[node name="Wall12" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 8, 8 )
+use_collision = true
+
+[node name="Wall13" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 8 )
+use_collision = true
+
+[node name="Wall8" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 5, -4 )
+use_collision = true
+width = 8.0
+height = 8.0
+
+[node name="Wall9" type="CSGBox" parent="Environment"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 5, -4 )
+use_collision = true
+width = 8.0
+height = 8.0
+
+[node name="Interactables" type="Spatial" parent="."]
+
+[node name="Button1" parent="Interactables" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, -3 )
+InteractionName = "Left"
+
+[node name="Button2" parent="Interactables" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 5, -3 )
+InteractionName = "Right"
+
+[node name="PressurePlate1" parent="Interactables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.99812, -5 )
+
+[node name="Window1" parent="Interactables" instance=ExtResource( 3 )]
+
+[node name="SecurityMonitor1" parent="Interactables" instance=ExtResource( 5 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19, 4.63392, -2.93178 )
+securityCameraNames = [ "SecurityCamera1", "SecurityCamera2" ]
+
+[node name="Agents" type="Spatial" parent="."]
+
+[node name="SecurityCamera1" parent="Agents" instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, -0.5, 0.866025, 0, 0.866025, 0.5, -1, 2.18557e-08, -3.78552e-08, -3.44593, 7.19869, 0 )
+
+[node name="SecurityCamera2" parent="Agents" instance=ExtResource( 4 )]
+transform = Transform( -0.872385, 0.24441, -0.42333, 0, 0.866025, 0.5, 0.488819, 0.436193, -0.755508, -21.5366, 7.19869, -38.0517 )
+
+[node name="Guard1" parent="Agents" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10.5852, 4, -23.073 )
+PatrolPathName = "Guard1"
+
+[node name="Paths" type="Spatial" parent="."]
+
+[node name="Guard1" type="Path" parent="Paths"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
+curve = SubResource( 2 )
+
+[node name="PlayerSpawn" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 19 )

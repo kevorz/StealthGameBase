@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/PressurePlate.cs" type="Script" id=1]
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 1, 2 )
+
+[sub_resource type="BoxShape" id=3]
+
+[node name="PressurePlate" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, -5 )
+script = ExtResource( 1 )
+
+[node name="InteractArea" type="Area" parent="."]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="InteractArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0122585, -1.00149, 1.0033 )
+shape = SubResource( 2 )
+
+[node name="TriggerArea" type="Area" parent="."]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="TriggerArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 1 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="InteractArea" to="." method="_on_InteractArea_body_entered"]
+[connection signal="body_exited" from="InteractArea" to="." method="_on_InteractArea_body_exited"]
+[connection signal="body_entered" from="TriggerArea" to="." method="_on_TriggerArea_body_entered"]
+[connection signal="body_exited" from="TriggerArea" to="." method="_on_TriggerArea_body_exited"]
